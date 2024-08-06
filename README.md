@@ -16,7 +16,7 @@ Pliki **YAML** zawieraja informacje symulacji:
 
 ### Symulacja bramki AND
 
-```
+```yaml
 molecules:
   - type: Protein
     name: Input1Prot
