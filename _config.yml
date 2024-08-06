@@ -1,4 +1,4 @@
-title: "BioComp - język do biocomputingu - dsl.biokomputery.pl"
+title: "BioComp - język do nauki symulacji modeli organizmów - dsl.biokomputery.pl"
 description: "Specyfikacja, wykorzystanie, przykłady graficzne logiki i symulacji z wykorzystaniem BioComp języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych."
 mermaid:
   src: "mermaid.js"
