@@ -44,6 +44,53 @@ simulation:
     - Protein OutputProt
 ```
 
+
+
+### Interpretacja Wykresu
+
+Wykresy generowane z symulacji opartej na pliku DSL pokazują dynamiczne zmiany w warunkach eksperymentalnych w funkcji czasu. 
+
+1. **Oś X (czas)**: Przedstawia czas trwania symulacji w minutach. Parametr `simulation.conditions['time']` ustala zakres czasowy symulacji. Cały przedział czasowy jest podzielony na 100 równych odstępów, dzięki czemu otrzymujemy szczegółowy wykres zmienności w czasie.
+
+2. **Oś Y (poziom wyjściowy)**: Przedstawia poziom wyjściowy białka lub innej zmiennej wyjściowej, określonej przez `simulation.outputs`. Funkcja `np.sin(time) / 2 + 0.5` daje synusoidalne zmiany poziomu wyjściowego o amplitudzie 0.5 i przesunięciu pionowym o 0.5, co oznacza, że wartości zmieniają się w zakresie od 0 do 1.
+
+3. **Linia wykresu**: Jest to krzywa pokazująca zmiany poziomu wyjściowego w czasie. Nazwa białka lub zmiennej jest wyświetlana jako etykieta wykresu na podstawie zawartości `simulation.outputs[0]`.
+
+
+### Przykładowe Wyniki Wykresu
+
+W przypadku symulacji opartej na przykładzie z wcześniejszym pliku `biocomp.yaml`, uzyskany wykres może wyglądać tak:
+
+- **Symulacja: BioCompSystem1**: Tytuł wykresu wskazuje, że symulacja jest wykonywana na systemie `BioCompSystem1`.
+- **Etykieta: Protein OutputProt**: Etykieta na wykresie odnosi się do nazwy wyjściowego białka zdefiniowanego w symulacji.
+
+Poniżej znajduje się przybliżona wizualizacja:
+
+```
+|          ________
+|         /        \
+|        /          \________ x100 minutes
+|_______/                    \_______
+0.0                                    100.0
+```
+
+**Przykładowy Wykres ze Wskazaniem**
+
+- Wartości na osi Y zmieniają się synusoidalnie od poziomu 0 do 1.
+- Wartości czasowe na osi X biegną od 0 do 100 minut.
+
+
+### Rzeczywiste Zastosowanie i Dane
+
+W praktycznych zastosowaniach, dane wejściowe będą bardziej złożone i precyzyjne, bazujące na faktycznych pomiarach lub modelach biomolekularnych.
+Symulacje mogą prezentować poziomy ekspresji genów, aktywności enzymatycznej, stężeń cząsteczek sygnałowych i innych ważnych parametrów biologicznych w zależności od warunków eksperymentalnych.
+
+**Podsumowanie**:
+
+Przykładowa sinusoidalna funkcja pokazuje podstawowe podejście do wizualizacji tych danych, ale rzeczywiste dane mogą być o wiele bardziej skomplikowane, zależnie od specyfiki symulacji i modelu biokomputerowego.
+
+
+
 ### Zależności
 
 1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
