@@ -346,12 +346,13 @@ digraph G {
 ![physarum.png](21/physarum.png)
 
 ### PhysarumExperiment2
+
 + [physarum.yaml](22/physarum.yaml)
 
 ```bash
 python physarum.py --folder ./21
 ```
-[physarum.dot](22/physarum.dot)
++ [physarum.dot](22/physarum.dot)
 ```css
 digraph G {
     node [shape=record];

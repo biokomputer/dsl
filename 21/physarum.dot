@@ -4,8 +4,8 @@
         "Simulation" [label="{
             Name: PhysarumSimulation1 |
             Grid Size: 101 |
-            Steps: 10000 |
-            Diffusion Coefficient: 0.1 |
+            Steps: 500 |
+            Diffusion Coefficient: 0.2 |
             Reaction Rate: 0.04 |
             k: 0.06 |
             Initial U Value: 0.5 |
