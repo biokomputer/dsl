@@ -6,12 +6,12 @@
             Grid Size: 101 |
             Steps: 500 |
             Diffusion Coefficient: 0.2 |
-            Reaction Rate: 0.04 |
-            k: 0.06 |
-            Initial U Value: 0.5 |
+            Reaction Rate: 0.02 |
+            k: 0.07 |
+            Initial U Value: 0.2 |
             Initial V Value: 0.25 |
-            Initial Radius: 20 |
-            Conditions: time=30, temperature=25, humidity=80 |
+            Initial Radius: 10 |
+            Conditions: time=3, temperature=1, humidity=70 |
             Outputs: u, v
         }"];
     }

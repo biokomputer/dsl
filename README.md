@@ -284,7 +284,7 @@ Expected Outputs: ['Protein OutputProt']
 python fungi.py --folder ./11
 ```
 
-```css
+```py
 digraph G {
     node [shape=record];
     "Simulation" [label="{Name: FungiExperiment1|Initial Population: 10|Growth Rate: 0.2|Carrying Capacity: 1000|Conditions: time=30, temperature=25, humidity=80|Outputs: Biomass}"];
@@ -300,7 +300,7 @@ digraph G {
 python fungi.py --folder ./11
 ```
 
-```css
+```py
 digraph G {
     node [shape=record];
     "Simulation" [label="{Name: FungiExperiment2|Initial Population: 5|Growth Rate: 0.1|Carrying Capacity: 500|Conditions: time=45, temperature=20, humidity=90|Outputs: Biomass}"];
@@ -321,7 +321,7 @@ digraph G {
 python physarum.py --folder ./21
 ```
 + [physarum.dot](21/physarum.dot)
-```css
+```py
 digraph G {
     node [shape=record];
     "Simulation" [label="{
@@ -353,7 +353,7 @@ digraph G {
 python physarum.py --folder ./21
 ```
 + [physarum.dot](22/physarum.dot)
-```css
+```py
 digraph G {
     node [shape=record];
     "Simulation" [label="{

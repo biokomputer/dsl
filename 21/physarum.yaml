@@ -3,15 +3,15 @@ name: "PhysarumSimulation1"
 grid_size: 101
 steps: 500
 diffusion_coefficient: 0.2
-reaction_rate: 0.04
-k: 0.06
-initial_u_value: 0.50
+reaction_rate: 0.02
+k: 0.07
+initial_u_value: 0.20
 initial_v_value: 0.25
-initial_radius: 20
+initial_radius: 10
 conditions:
-  time: 30    # days
-  temperature: 25  # Celsius
-  humidity: 80     # Percentage
+  time: 3    # days
+  temperature: 1  # Celsius
+  humidity: 70     # Percentage
 outputs:
   - "u"
   - "v"
