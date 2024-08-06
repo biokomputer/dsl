@@ -14,6 +14,33 @@ Pliki **YAML** zawieraja informacje symulacji:
 4. **Drukowanie i Inżynieria BioSystemów**
 5. **Monitorowanie i Utrzymanie Systemów**
 
+### Prosta symulacja bramki AND
+
+```
+molecules:
+  - type: Protein
+    name: Input1Prot
+  - type: Protein
+    name: Input2Prot
+  - type: Protein
+    name: OutputProt
+
+logic_gates:
+  - gate_type: AND
+    input1: Input1Prot
+    input2: Input2Prot
+    output: OutputProt
+
+biological_system:
+  name: BioCompSystem1
+
+simulation:
+  conditions:
+    time: 100
+    temperature: 37
+  outputs:
+    - Protein OutputProt
+```
 
 ### Zależnosci
 
