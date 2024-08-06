@@ -1,0 +1,24 @@
+# OR Gate Simulation
+molecules:
+  - type: Protein
+    name: Input1Prot
+  - type: Protein
+    name: Input2Prot
+  - type: Protein
+    name: OutputProt
+
+logic_gates:
+  - gate_type: OR
+    input1: Input1Prot
+    input2: Input2Prot
+    output: OutputProt
+
+biological_system:
+  name: BioCompSystem2
+
+simulation:
+  conditions:
+    time: 150
+    temperature: 25
+  outputs:
+    - Protein OutputProt

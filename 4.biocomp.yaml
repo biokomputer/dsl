@@ -1,0 +1,22 @@
+# Simple NOT Gate Simulation
+molecules:
+  - type: Protein
+    name: Input1Prot
+  - type: Protein
+    name: OutputProt
+
+logic_gates:
+  - gate_type: NOT
+    input1: Input1Prot
+    input2: null
+    output: OutputProt
+
+biological_system:
+  name: BioCompSystem4
+
+simulation:
+  conditions:
+    time: 120
+    temperature: 37
+  outputs:
+    - Protein OutputProt

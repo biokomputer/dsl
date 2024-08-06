@@ -1,0 +1,33 @@
+# Complex System with Multiple Gates
+molecules:
+  - type: Protein
+    name: Input1Prot
+  - type: Protein
+    name: Input2Prot
+  - type: Protein
+    name: Input3Prot
+  - type: Protein
+    name: OutputProt1
+  - type: Protein
+    name: OutputProt2
+
+logic_gates:
+  - gate_type: AND
+    input1: Input1Prot
+    input2: Input2Prot
+    output: OutputProt1
+  - gate_type: OR
+    input1: OutputProt1
+    input2: Input3Prot
+    output: OutputProt2
+
+biological_system:
+  name: BioCompSystem3
+
+simulation:
+  conditions:
+    time: 200
+    temperature: 30
+  outputs:
+    - Protein OutputProt1
+    - Protein OutputProt2

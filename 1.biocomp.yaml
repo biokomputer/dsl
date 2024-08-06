@@ -1,3 +1,4 @@
+# Simple AND Gate Simulation
 molecules:
   - type: Protein
     name: Input1Prot

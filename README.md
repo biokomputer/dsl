@@ -48,7 +48,7 @@ To run this setup, follow these steps:
 3. Execute the Python script from the command line, providing the YAML file as an argument:
 
 ```sh
-python biocomp.py biocomp.yaml
+python biocomp.py 1.biocomp.yaml
 ```
 
 The output should be something like:
@@ -59,4 +59,41 @@ Conditions: {'time': 100, 'temperature': 37}
 Expected Outputs: ['Protein OutputProt']
 ```
 
+![sim.png](sim.png)
+
 This setup parses the YAML file, creates the necessary objects, and runs the simulation based on the parameters provided in the YAML file.
+
+
+## More Samples
+
+These examples include various configurations of molecules, logic gates, and simulation conditions.
+Assuming you have implemented `AND`, `OR`, and `NOT` gate logic in your actual `LogicGate` class, these should yield appropriate outputs based on the conditions set in each YAML file.
+Examples can handle various gate types (`AND`, `OR`, `NOT`). 
+If not, you'll need to add the logic for these gate types in your `LogicGate` class implementation.
+
+To test your script with these examples, save each YAML configuration as separate files 
+
+```sh
+python biocomp.py 2.biocomp.yaml
+```
+
+
+
+```sh
+python biocomp.py 3.biocomp.yaml
+```
+
+
+```sh
+python biocomp.py 4.biocomp.yaml
+```
+
+
+
+
+
+
+
+
+
+
