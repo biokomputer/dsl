@@ -17,6 +17,52 @@ Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 5. Monitorowanie i Utrzymanie Systemów
 
 
+
+### Zależności
+
+1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
+2. **`matplotlib`**: Biblioteka do tworzenia wizualizacji, użyta do generowania wykresów wyników symulacji.
+3. **`numpy`**: Biblioteka do operacji na tablicach wielowymiarowych, używana do generowania danych do symulacji.
+4. **`graphviz`**: The addition of the `graphviz` module is necessary for graph visualization.
+
+
+### Instalacja
+
+Aby zainstalować te wymagania w swoim środowisku Python, wykonaj następujące kroki:
+
+#### Stwórz i aktywuj wirtualne środowisko:
+
+```bash
+python -m venv env
+source env/bin/activate  # Na Windows użyj: env\Scripts\activate
+```
+ 
+#### Zainstaluj zależności z pliku `requirements.txt`:
+```bash
+pip install -r requirements.txt
+pip install --upgrade pip
+```
+
+
+---
+
+## Symulacje bramek logicznych 
+
+
+
+### Uruchomienie
+
+Aby uruchomić tę konfigurację, wykonaj następujące kroki:
+
+1. Zapisz kod Python w pliku o nazwie `biocomp.py`.
+2. Zapisz zawartość pliku YAML w pliku o nazwie `biocomp.yaml`.
+3. Uruchom skrypt Python z pliku `biocomp.py`, podając plik YAML jako argument:
+
+```bash
+python biocomp.py biocomp.yaml
+```
+
+
 **Wzór Przetwarzania Danych Wejściowych:**
 
 ![obraz](https://github.com/user-attachments/assets/8a016acd-029d-4fd5-a868-b38d7257cfa2)
@@ -94,7 +140,6 @@ Poniżej znajduje się przybliżona wizualizacja:
 - Wartości na osi Y zmieniają się synusoidalnie od poziomu 0 do 1.
 - Wartości czasowe na osi X biegną od 0 do 100 minut.
 
-
 ### Rzeczywiste Zastosowanie i Dane
 
 W praktycznych zastosowaniach, dane wejściowe będą bardziej złożone i precyzyjne, bazujące na faktycznych pomiarach lub modelach biomolekularnych.
@@ -105,45 +150,6 @@ Symulacje mogą prezentować poziomy ekspresji genów, aktywności enzymatycznej
 Przykładowa sinusoidalna funkcja pokazuje podstawowe podejście do wizualizacji tych danych, ale rzeczywiste dane mogą być o wiele bardziej skomplikowane, zależnie od specyfiki symulacji i modelu biokomputerowego.
 
 
-
-
-### Zależności
-
-1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
-2. **`matplotlib`**: Biblioteka do tworzenia wizualizacji, użyta do generowania wykresów wyników symulacji.
-3. **`numpy`**: Biblioteka do operacji na tablicach wielowymiarowych, używana do generowania danych do symulacji.
-4. **`graphviz`**: The addition of the `graphviz` module is necessary for graph visualization.
-
-
-### Instalacja
-
-Aby zainstalować te wymagania w swoim środowisku Python, wykonaj następujące kroki:
-
-#### Stwórz i aktywuj wirtualne środowisko:
-
-```bash
-python -m venv env
-source env/bin/activate  # Na Windows użyj: env\Scripts\activate
-```
- 
-#### Zainstaluj zależności z pliku `requirements.txt`:
-```bash
-pip install -r requirements.txt
-pip install --upgrade pip
-```
-
-
-### Uruchomienie
-
-Aby uruchomić tę konfigurację, wykonaj następujące kroki:
-
-1. Zapisz kod Python w pliku o nazwie `biocomp.py`.
-2. Zapisz zawartość pliku YAML w pliku o nazwie `biocomp.yaml`.
-3. Uruchom skrypt Python z pliku `biocomp.py`, podając plik YAML jako argument:
-
-```bash
-python biocomp.py biocomp.yaml
-```
 
 
 ## Przykłady
@@ -276,7 +282,51 @@ Expected Outputs: ['Protein OutputProt']
 ![4](4/sim.png)
 
 
-## Symulacja Grzybow
+
+---
+
+## Symulacje Grzybow
+
+Aby przeprowadzić symulację, np. wzrostu grzybów, warto uwzględnić czynniki takie jak dostępność substancji odżywczych, temperatura, wilgotność i czas. 
+Wzrost grzybów można modelować za pomocą różniczkowych równań wzrostu biologicznego, takich jak równanie Verhulsta (logistyczne równanie różniczkowe) lub modele podobne.
+
+### Wzór Symulacji Wzrostu Grzybów
+
+Równanie logistyczne może być używane do modelowania wzrostu populacji organizmu, w tym grzybów:
+\[ \frac{dN}{dt} = rN \left(1 - \frac{N}{K}\right) \]
+
+Gdzie:
+- \( N \) jest liczbą organizmów (np. masa biomasy grzybów),
+- \( r \) jest wskaźnikiem wzrostu,
+- \( K \) jest nośnością środowiska.
+
+#### Skrypt `fungi.py`
+
+Skrypt Pythona, który przetwarza dane wejściowe z plików YAML i wykonuje symulację wzrostu grzybów.
+Wzór logistyczny użyty w skrypcie pozwala modelować realistyczny wzrost populacji grzybów i może być dostosowany dzięki zmianie parametrów w plikach YAML.
+Skrypt wspiera przetwarzanie wielu plików YAML oraz opcjonalnie przetwarzanie wszystkich plików YAML w podanym folderze.
+Zawiera funkcje do generowania wykresów, tekstowych definicji grafów oraz graficznych reprezentacji grafów.
+
+1. **Obsługa wielu plików YAML**: Pobieranie wielu plików jako argumentów lub obsługa folderu zawierającego pliki YAML.
+2. **Parsowanie**: danych i tworzenie strukturę symulacji**,
+3. **Symulacja**: wzrostu grzybów za pomocą równania logistycznego,
+4. **Wizualizacja wyników**: Generowanie wykresów wzrostu biomasy.
+5. **Generowanie tekstowej definicji grafu**: Zapisywanie parametrów symulacji i wyników do pliku tekstowego.
+6. **Graficzna reprezentacja grafu**: Tworzenie grafów za pomocą Graphviz.
+
+
+
+#### Wymagane biblioteki
+Aby zapewnić pełną funkcjonalność, należy zainstalować następujące biblioteki:
+- `yaml`
+- `matplotlib`
+- `graphviz`
+
+Można je zainstalować za pomocą pip:
+```bash
+pip install pyyaml matplotlib graphviz
+```
+
 
 ### FungiExperiment1
 
@@ -312,7 +362,35 @@ digraph G {
 [fungi.yaml](12/fungi.yaml)
 
 
-## Physarum
+---
+
+## Symulacje Physarum
+
+Aby zrealizować bardziej złożoną symulację wzrostu Physarum polycephalum (slime mold) jako hierarchicznej struktury komórkowej w kontekście modeli reakcyjno-dyfuzyjnych, należy przeanalizować kilka kluczowych procesów. Model reakcyjno-dyfuzyjny umożliwia symulację jak substancje (np. chemotaksyny) dyfundują oraz jak komórki reagują na te substancje, co prowadzi do wzrostu i formowania wzorca strukturalnego.
+
+To jest dość zaawansowane zadanie, które można osiągnąć przy użyciu bibliotek takich jak NumPy do obliczeń oraz Matplotlib do wizualizacji. Do generowania grafów hierarchicznych użyjemy Graphviz.
+
+Założenia:
+1. **Hierarchiczna struktura**: Model Physarum jako siatki komórkowej.
+2. **Model reakcyjno-dyfuzyjny**: Użyjemy prostego równania reakcyjno-dyfuzyjnego do modelowania rozprzestrzeniania się i reakcji chemotaksyn.
+
+### Równanie Reakcyjno-Dyfuzyjne
+\[ \frac{\partial u}{\partial t} = D \nabla^2 u + f(u, v) \]
+\[ \frac{\partial v}{\partial t} = D \nabla^2 v + g(u, v) \] 
+gdzie:
+- \( u \) i \( v \) są koncentracją substancji chemicznych,
+- \( D \) jest współczynnikiem dyfuzji,
+- \( f(u, v) \) oraz \( g(u, v) \) są funkcjami reakcji.
+
+### Skrypt Python dla Modelu Hierarchicznej Struktury i Wykresu
+Skrypt tworzy hierarchiczną strukturę Physarum jako maszynę reakcyjno-dyfuzyjną, przetwarza wiele plików YAML, a także generuje wizualizacje, tekstową definicję grafu i jego graficzną reprezentację. Wszystkie wygenerowane pliki są nazwane zgodnie z nazwami plików YAML, ale bez rozszerzenia `.yaml`.
+
+#### Instalacja Wymaganych Bibliotek
+
+Najpierw zainstaluj wymagane biblioteki:
+```bash
+pip install numpy matplotlib graphviz
+```
 
 ### PhysarumExperiment1
 + [physarum.yaml](21/physarum.yaml)
