@@ -3,10 +3,11 @@
 [BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
 
 
-### Składnia
+### Składnia języka
 
-Główne składniki BioDSL obejmują:
-
+BioComp to skrypt Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
+Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia symulację w oparciu o parametry zawarte w pliku YAML.
+Pliki **YAML** zawieraja informacje symulacji:
 1. **Definicje Molekularne**
 2. **Tworzenie Biologicznych Układów Logicznych**
 3. **Symulacje Eksperymentów**
@@ -14,12 +15,7 @@ Główne składniki BioDSL obejmują:
 5. **Monitorowanie i Utrzymanie Systemów**
 
 
-### Zaleznosci
-
-BioComp to skrypt Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
-Pliki YAML zawieraja parametry dla tych instancji.
-Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia symulację w oparciu o parametry zawarte w pliku YAML.
-
+### Zależnosci
 
 1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
 2. **`matplotlib`**: Biblioteka do tworzenia wizualizacji, użyta do generowania wykresów wyników symulacji.
