@@ -38,7 +38,7 @@ python -m venv env
 source env/bin/activate  # Na Windows użyj: env\Scripts\activate
 ```
  
-####  Zainstaluj zależności z pliku `requirements.txt`:
+#### Zainstaluj zależności z pliku `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 pip install --upgrade pip
@@ -58,7 +58,7 @@ python biocomp.py biocomp.yaml
 ```
 
 
-## Przyklady
+## Przykłady
 
 Te przykłady obejmują różne konfiguracje dla różnych typów biologicznych układów logicznych. Przykłady obejmują różne typy bramek logicznych, takie jak "AND", "OR" i "NOT". Jeśli w twojej klasie `LogicGate` zostały zaimplementowane poprawne działanie dla tych bramek, to te przykłady powinny dawać odpowiednie wyniki na podstawie ustawionych warunków w plikach YAML.
 Jeśli nie zaimplementowano jeszcze działania dla tych bramek w klasie `LogicGate`, to należy to zrobić.
