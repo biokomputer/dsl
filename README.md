@@ -70,7 +70,7 @@ To test your script with these examples, save each YAML configuration as separat
 
 ![bio_system_graph.png](1%2Fbio_system_graph.png)
 
-```yaml
+```py
 digraph {
 	Input1Prot [label="Input1Prot (Protein)"]
 	Input2Prot [label="Input2Prot (Protein)"]
