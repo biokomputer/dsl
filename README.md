@@ -21,6 +21,9 @@ Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 
 - **Poziom Wyjściowy:** 
 
+
+![obraz](https://github.com/user-attachments/assets/8a016acd-029d-4fd5-a868-b38d7257cfa2)
+
 ```latex
 \[ \text{output\_level} = \frac{\sin(t)}{2} + 0.5 \]
 ```
