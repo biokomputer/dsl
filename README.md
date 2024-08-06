@@ -1,4 +1,5 @@
-![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
+![biocomp](https://github.com/user-attachments/assets/f9a3d58d-fd75-4d62-b456-034d94e75a08)
+
 
 [BioComp "Coded Life"](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
 Motto "Coded Life" Łączy w sobie koncepcję kodowania (nawiązując do aspektu programistycznego) z życiem (odnosząc się do biologicznej strony projektu).
@@ -81,6 +82,9 @@ Aby uruchomić tę konfigurację, wykonaj następujące kroki:
 ```bash
 python biocomp.py biocomp.yaml
 ```
+
+
+![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
 
 
 ## Przykłady
