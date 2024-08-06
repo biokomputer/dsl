@@ -7,4 +7,5 @@
 + konwersja xls do walidacji tekstowej z debuugerm
 + debbugger podczas symulacji
 + logi
++ uycie SQL do reprezentacji danych i funkcji
 + 

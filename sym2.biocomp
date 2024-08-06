@@ -1,4 +1,4 @@
-molecule DNA (name="Plasmid123", sequence ="ATGCGTACG...")
+molecule DNA(name="Plasmid123", sequence="ATGCGTACG...")
 molecule Protein(name="GFP", expression="Plasmid123", structure="AlphaHelix")
 
 logic_gate AND(

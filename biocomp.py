@@ -1,40 +1,26 @@
-from typing import List, Dict
-
-
-class Molecule:
-    def __init__(self, type: str, name: str, sequence: str = None, expression: str = None, structure: str = None):
-        self.type = type
-        self.name = name
-        self.sequence = sequence
-        self.expression = expression
-        self.structure = structure
-
-
-class LogicGate:
-    def __init__(self, gate_type: str, input1: Molecule, input2: Molecule, output: Molecule):
-        self.gate_type = gate_type
-        self.input1 = input1
-        self.input2 = input2
-        self.output = output
-
-
-class BiologicalSystem:
-    def __init__(self, name: str, logic_gates: List[LogicGate], molecules: List[Molecule]):
-        self.name = name
-        self.logic_gates = logic_gates
-        self.molecules = molecules
-
-
-class Simulation:
-    def __init__(self, system: BiologicalSystem, conditions: Dict[str, float], outputs: List[str]):
-        self.system = system
-        self.conditions = conditions
-        self.outputs = outputs
-
-
-### Krok 2: Parsowanie DSL
-
+import argparse
+import matplotlib.pyplot as plt
+import numpy as np
 from pyparsing import Word, alphas, alphanums, Group, Optional, Suppress, Keyword, delimitedList
+
+
+def load_dsl_from_file(file_path: str) -> str:
+    with open(file_path, 'r') as file:
+        dsl_code = file.read()
+    return dsl_code
+
+
+def run_simulation(simulation):
+    time = np.linspace(0, float(simulation.conditions["time"]), 100)  # Generate 100 time points
+    output_levels = np.sin(time) / 2 + 0.5  # Example function to simulate protein output level
+
+    plt.figure()
+    plt.plot(time, output_levels, label=f"{simulation.outputs[0]}")
+    plt.title(f"Simulation: {simulation.system.name}")
+    plt.xlabel("Time (minutes)")
+    plt.ylabel("Output Level")
+    plt.legend()
+    plt.show()
 
 
 def parse_dsl(dsl_code: str):
@@ -84,28 +70,46 @@ def parse_dsl(dsl_code: str):
         + Suppress("}")
     )
 
+    # dsl_expr = molecule_expr | logic_gate_expr
     dsl_expr = molecule_expr | logic_gate_expr | system_expr | simulation_expr
+    # print(dsl_expr)
+    # print(molecule_expr)
+    # print(simulation_expr)
     parsed_result = dsl_expr.searchString(dsl_code)
+    # print(parsed_result)
+
     return parsed_result
 
 
-### Krok 3: Przetwarzanie wyników parsowania i symulacja
+class Molecule:
+    def __init__(self, type: str, name: str, sequence: str = None, expression: str = None, structure: str = None):
+        self.type = type
+        self.name = name
+        self.sequence = sequence
+        self.expression = expression
+        self.structure = structure
 
-import matplotlib.pyplot as plt
-import numpy as np
+
+class LogicGate:
+    def __init__(self, gate_type: str, input1: Molecule, input2: Molecule, output: Molecule):
+        self.gate_type = gate_type
+        self.input1 = input1
+        self.input2 = input2
+        self.output = output
 
 
-def run_simulation(simulation: Simulation):
-    time = np.linspace(0, float(simulation.conditions["time"]), 100)  # Generate 100 time points
-    output_levels = np.sin(time) / 2 + 0.5  # Example function to simulate protein output level
+class BiologicalSystem:
+    def __init__(self, name: str, logic_gates, molecules):
+        self.name = name
+        self.logic_gates = logic_gates
+        self.molecules = molecules
 
-    plt.figure()
-    plt.plot(time, output_levels, label=f"{simulation.outputs[0]}")
-    plt.title(f"Simulation: {simulation.system.name}")
-    plt.xlabel("Time (minutes)")
-    plt.ylabel("Output Level")
-    plt.legend()
-    plt.show()
+
+class Simulation:
+    def __init__(self, system: BiologicalSystem, conditions, outputs):
+        self.system = system
+        self.conditions = conditions
+        self.outputs = outputs
 
 
 def create_molecule(parsed_molecule):
@@ -158,25 +162,31 @@ def parse_dsl_to_objects(parsed_result):
     return simulations
 
 
-### Krok 4: Wczytywanie danych DSL z pliku
+def main():
+    parser = argparse.ArgumentParser(description='Run BioComputing simulation from DSL file.')
+    parser.add_argument('file', type=str, nargs='?', default='sym.biocomp',
+                        help='The DSL file to process (default: sym.biocomp)')
+    parser.add_argument('simulation', type=str, nargs='?', default='BioCompSim1',
+                        help='The DSL file to process (default: BioCompSim1)')
 
-
-def load_dsl_from_file(file_path: str) -> str:
-    with open(file_path, 'r') as file:
-        dsl_code = file.read()
-    return dsl_code
-
-
-
-### Krok 5: Główna funkcja do złożenia wszystkiego w całość
-
-def main(file_path: str):
-    dsl_code = load_dsl_from_file(file_path)
-    parsed_result = parse_dsl(dsl_code)
-    parsed_objects = parse_dsl_to_objects(parsed_result)
-    simulation = parsed_objects["BioCompSim1"]
-    run_simulation(simulation)
+    args = parser.parse_args()
+    if args.file:
+        dsl_code = load_dsl_from_file(args.file)
+        if not dsl_code:
+            print(f"NOT Parsed FILE")
+        print(dsl_code)
+        parsed_result = parse_dsl(dsl_code)
+        if not parsed_result:
+            print(f"NOT Parsed CODE")
+        parsed_objects = parse_dsl_to_objects(parsed_result)
+        if not parsed_objects:
+            print(f"NOT Parsed DSL objects")
+            return
+        if parsed_objects and args.simulation:
+            simulation_name = args.simulation
+            simulation = parsed_objects[simulation_name]
+            run_simulation(simulation)
 
 
 if __name__ == "__main__":
-    main("path_to_your_dsl_file.dsl")
+    main()

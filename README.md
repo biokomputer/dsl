@@ -184,7 +184,7 @@ pip install --upgrade pip
 Po zainstalowaniu wszystkich potrzebnych bibliotek, możesz uruchomić swój kod Python zawierający parser DSL oraz symulację i wizualizację.
 
 ```bash
-python biodsl.py
+python biodsl.py sym1.biocomp
 ```
 
 ```sql
