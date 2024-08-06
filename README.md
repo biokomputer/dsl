@@ -66,6 +66,7 @@ To test your script with these examples, save each YAML configuration as separat
 
 
 ### BioCompSystem1
++ [biocomp.yaml](1/biocomp.yaml)
 
 ![bio_system_graph.png](1%2Fbio_system_graph.png)
 
@@ -95,6 +96,8 @@ Expected Outputs: ['Protein OutputProt']
 
 
 ### BioCompSystem2
++ [biocomp.yaml](2/biocomp.yaml)
+
 ![bio_system_graph.png](2/bio_system_graph.png)
 
 ```css
@@ -122,6 +125,8 @@ Expected Outputs: ['Protein OutputProt']
 
 
 ### BioCompSystem3
++ [biocomp.yaml](3/biocomp.yaml)
+
 ![bio_system_graph.png](3/bio_system_graph.png)
 
 
@@ -156,6 +161,8 @@ Expected Outputs: ['Protein OutputProt1', 'Protein OutputProt2']
 
 
 ### BioCompSystem4
++ [biocomp.yaml](4/biocomp.yaml)
+
 ![bio_system_graph.png](4/bio_system_graph.png)
 
 ```css
