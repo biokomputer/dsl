@@ -7,9 +7,9 @@ Motto "Coded Life" Łączy w sobie koncepcję kodowania (nawiązując do aspektu
 
 ### Składnia języka
 
-BioComp to skrypt Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
-Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia symulację w oparciu o parametry zawarte w pliku YAML.
-Pliki **YAML** zawieraja informacje symulacji:
+**BioComp** jest zaimplementowany jako skrypt Pythona z klasami i funkcjami przetwarzania pliku 'yaml', generowania symulacji i grafu. 
+Plik `biocomp.py` modelu jest konwertowany do obiektow klas potrzebnyh do uruchamienia symulacji.
+Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 1. **Definicje Molekularne**
 2. **Tworzenie Biologicznych Układów Logicznych**
 3. **Symulacje Eksperymentów**
