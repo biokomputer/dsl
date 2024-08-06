@@ -1,6 +1,4 @@
-# [BioComp - python based DSL for biocomputing](https://dsl.biokomputery.pl/)
-
-Propozycja języka domenowo-specyficznego (DSL) do edukacji
+[BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji
 i wdrażania biocomputingu mogłaby obejmować elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
 BioComp posiada jasną i intuicyjną składnię, umożliwiającą tworzenie i uruchamianie eksperymentów oraz analizę wyników.
 
