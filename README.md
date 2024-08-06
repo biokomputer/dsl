@@ -19,18 +19,16 @@ Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 
 **Wzór Przetwarzania Danych Wejściowych:**
 
-- **Poziom Wyjściowy:** 
+![obraz](https://github.com/user-attachments/assets/8a016acd-029d-4fd5-a868-b38d7257cfa2)
 
+```latex
+\[ \text{output\_level} = \frac{\sin(t)}{2} + 0.5 \]
+```
 
 ```python
 def run_simulation(simulation):
     time = np.linspace(0, float(simulation.conditions["time"]), 100)  # Generowanie 100 punktów czasowych
     output_levels = np.sin(time) / 2 + 0.5  # Przykładowa funkcja poziomu wyjściowego    
-```
-
-
-```latex
-\[ \text{output\_level} = \frac{\sin(t)}{2} + 0.5 \]
 ```
 
 ### Symulacja bramki AND
