@@ -287,6 +287,9 @@ Wzrost grzybów można modelować za pomocą różniczkowych równań wzrostu bi
 ### Wzór Symulacji Wzrostu Grzybów
 
 Równanie logistyczne może być używane do modelowania wzrostu populacji organizmu, w tym grzybów:
+
+![obraz](https://github.com/user-attachments/assets/2af1d822-2f7b-49b0-942d-f1a6d24c0d58)
+
 ```latex
 \[ \frac{dN}{dt} = rN \left(1 - \frac{N}{K}\right) \]
 ```
@@ -372,10 +375,17 @@ Założenia:
 
 ### Równanie Reakcyjno-Dyfuzyjne
 
+![obraz](https://github.com/user-attachments/assets/ae15c732-641b-42b1-9300-1236819b09ea)
+
 ```latex
 \[ \frac{\partial u}{\partial t} = D \nabla^2 u + f(u, v) \]
+```
+
+
+![obraz](https://github.com/user-attachments/assets/1336ed6f-4508-4c9b-9c9d-e07fa40c1c07)
+```latex
 \[ \frac{\partial v}{\partial t} = D \nabla^2 v + g(u, v) \]
-``` 
+```
 gdzie:
 - \( u \) i \( v \) są koncentracją substancji chemicznych,
 - \( D \) jest współczynnikiem dyfuzji,
