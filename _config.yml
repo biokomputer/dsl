@@ -1,0 +1,11 @@
+title: "BioComp - język do biocomputingu - dsl.biokomputery.pl"
+description: "Specyfikacja, wykrozystanie, przykady graficzne logiki i symulacji w biokomputingu z apomoa specificznego jezyka domenowego BioComp"
+mermaid:
+  src: "mermaid.js"
+plugins:
+  - "jekyll-github-metadata"  
+  - "jekyll-readme-index"
+readme_index:
+  enabled:          true
+  remove_originals: false
+  with_frontmatter: false
