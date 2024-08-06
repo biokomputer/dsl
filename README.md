@@ -205,7 +205,7 @@ Expected Outputs: ['Protein OutputProt']
 
 Na co dzień DevOps, ewangelista hipermodularyzacji, ostatnio entuzjasta biocomputing.
 Łączy doświadczenie w programowaniu i research-u poprzez wdrażanie nowatorskich rozwiązań. 
-Szerokie spektrum zainteresowań, umiejętności analityczne i doświadczenie w branży owocują eksperymentalnymi projetkami opensource jak ten omwiony.
+Szerokie spektrum zainteresowań, umiejętności analityczne i doświadczenie w branży owocują eksperymentalnymi projektami opensource.
 
 + [Tom Sapletta, Linkedin](https://www.linkedin.com/in/tom-sapletta-com)
 + [Tom Sapletta, Github](https://github.com/tom-sapletta-com)
