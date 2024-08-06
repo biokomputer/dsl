@@ -1,3 +1,5 @@
+![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
+
 [BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji
 i wdrażania biocomputingu mogłaby obejmować elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
 BioComp posiada jasną i intuicyjną składnię, umożliwiającą tworzenie i uruchamianie eksperymentów oraz analizę wyników.
