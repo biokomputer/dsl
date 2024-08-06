@@ -70,7 +70,7 @@ To test your script with these examples, save each YAML configuration as separat
 
 ![bio_system_graph.png](1%2Fbio_system_graph.png)
 
-```css
+```yaml
 digraph {
 	Input1Prot [label="Input1Prot (Protein)"]
 	Input2Prot [label="Input2Prot (Protein)"]
@@ -88,7 +88,7 @@ python biocomp.py 1/biocomp.yaml
 
 ![1](1/sim.png)
 
-```
+```yaml
 Running simulation for BioCompSystem1
 Conditions: {'time': 100, 'temperature': 37}
 Expected Outputs: ['Protein OutputProt']
@@ -100,7 +100,7 @@ Expected Outputs: ['Protein OutputProt']
 
 ![bio_system_graph.png](2/bio_system_graph.png)
 
-```css
+```py
 digraph {
 	Input1Prot [label="Input1Prot (Protein)"]
 	Input2Prot [label="Input2Prot (Protein)"]
@@ -130,7 +130,7 @@ Expected Outputs: ['Protein OutputProt']
 ![bio_system_graph.png](3/bio_system_graph.png)
 
 
-```css
+```py
 digraph {
 	Input1Prot [label="Input1Prot (Protein)"]
 	Input2Prot [label="Input2Prot (Protein)"]
@@ -165,7 +165,7 @@ Expected Outputs: ['Protein OutputProt1', 'Protein OutputProt2']
 
 ![bio_system_graph.png](4/bio_system_graph.png)
 
-```css
+```py
 digraph {
 	Input1Prot [label="Input1Prot (Protein)"]
 	OutputProt [label="OutputProt (Protein)"]
