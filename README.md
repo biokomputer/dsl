@@ -14,7 +14,7 @@ Pliki **YAML** zawieraja informacje symulacji:
 4. **Drukowanie i Inżynieria BioSystemów**
 5. **Monitorowanie i Utrzymanie Systemów**
 
-### Prosta symulacja bramki AND
+### Symulacja bramki AND
 
 ```
 molecules:
@@ -42,7 +42,7 @@ simulation:
     - Protein OutputProt
 ```
 
-### Zależnosci
+### Zależności
 
 1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
 2. **`matplotlib`**: Biblioteka do tworzenia wizualizacji, użyta do generowania wykresów wyników symulacji.
