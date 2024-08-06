@@ -16,6 +16,15 @@ Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 4. Drukowanie i Inżynieria BioSystemów
 5. Monitorowanie i Utrzymanie Systemów
 
+
+**Wzór Przetwarzania Danych Wejściowych:**
+
+- **Poziom Wyjściowy:** 
+
+```latex
+\[ \text{output\_level} = \frac{\sin(t)}{2} + 0.5 \]
+```
+
 ### Symulacja bramki AND
 
 ```yaml
@@ -59,7 +68,7 @@ Wykresy generowane z symulacji opartej na pliku DSL pokazują dynamiczne zmiany 
 
 ### Przykładowe Wyniki Wykresu
 
-W przypadku symulacji opartej na przykładzie z wcześniejszym pliku `biocomp.yaml`, uzyskany wykres może wyglądać tak:
+W przypadku symulacji opartej na przykładzie z wcześniejszym pliku `1/biocomp.yaml`, uzyskany wykres może wyglądać tak:
 
 - **Symulacja: BioCompSystem1**: Tytuł wykresu wskazuje, że symulacja jest wykonywana na systemie `BioCompSystem1`.
 - **Etykieta: Protein OutputProt**: Etykieta na wykresie odnosi się do nazwy wyjściowego białka zdefiniowanego w symulacji.
@@ -88,6 +97,7 @@ Symulacje mogą prezentować poziomy ekspresji genów, aktywności enzymatycznej
 **Podsumowanie**:
 
 Przykładowa sinusoidalna funkcja pokazuje podstawowe podejście do wizualizacji tych danych, ale rzeczywiste dane mogą być o wiele bardziej skomplikowane, zależnie od specyfiki symulacji i modelu biokomputerowego.
+
 
 
 
