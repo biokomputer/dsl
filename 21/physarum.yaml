@@ -1,5 +1,5 @@
 type: physarum
-name: "PhysarumSimulation2"
+name: "PhysarumSimulation1"
 grid_size: 101
 steps: 200
 diffusion_coefficient: 0.2

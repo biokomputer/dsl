@@ -2,7 +2,7 @@
     digraph G {
         node [shape=record];
         "Simulation" [label="{
-            Name: PhysarumSimulation2 |
+            Name: PhysarumSimulation3 |
             Grid Size: 101 |
             Steps: 200 |
             Diffusion Coefficient: 0.2 |
