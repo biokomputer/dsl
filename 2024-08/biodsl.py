@@ -78,7 +78,7 @@ def parse_dsl(dsl_code: str):
     parsed_result = dsl_expr.searchString(dsl_code)
     return parsed_result
 
-## Example
+
 dsl_code = """
 molecule DNA(name="Plasmid123", sequence="ATGCGTACG...")
 molecule Protein(name="GFP", expression="Plasmid123", structure="AlphaHelix")
@@ -103,6 +103,17 @@ simulation BioCompSim1 {
     outputs = ["Protein OutputProt"]
 }
 """
+
+
+# Load dsl_code from file
+def load_dsl_from_file(file_path: str) -> str:
+    with open(file_path, 'r') as file:
+        dsl_code = file.read()
+    return dsl_code
+
+filename="sym1.biocomp"
+dsl_code = load_dsl_from_file(filename)
+
 
 parsed_result = parse_dsl(dsl_code)
 print(parsed_result)
