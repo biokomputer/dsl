@@ -1,0 +1,10 @@
+// BioCompSystem1
+digraph {
+	Input1Prot [label="Input1Prot (Protein)"]
+	Input2Prot [label="Input2Prot (Protein)"]
+	OutputProt [label="OutputProt (Protein)"]
+	"AND Gate"
+	Input1Prot -> "AND Gate"
+	Input2Prot -> "AND Gate"
+	"AND Gate" -> OutputProt
+}

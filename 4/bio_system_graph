@@ -1,0 +1,8 @@
+// BioCompSystem4
+digraph {
+	Input1Prot [label="Input1Prot (Protein)"]
+	OutputProt [label="OutputProt (Protein)"]
+	"NOT Gate"
+	Input1Prot -> "NOT Gate"
+	"NOT Gate" -> OutputProt
+}

@@ -2,3 +2,4 @@ pyparsing
 matplotlib
 numpy
 pyyaml
+graphviz

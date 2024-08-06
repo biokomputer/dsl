@@ -1,0 +1,16 @@
+// BioCompSystem3
+digraph {
+	Input1Prot [label="Input1Prot (Protein)"]
+	Input2Prot [label="Input2Prot (Protein)"]
+	Input3Prot [label="Input3Prot (Protein)"]
+	OutputProt1 [label="OutputProt1 (Protein)"]
+	OutputProt2 [label="OutputProt2 (Protein)"]
+	"AND Gate"
+	Input1Prot -> "AND Gate"
+	Input2Prot -> "AND Gate"
+	"AND Gate" -> OutputProt1
+	"OR Gate"
+	OutputProt1 -> "OR Gate"
+	Input3Prot -> "OR Gate"
+	"OR Gate" -> OutputProt2
+}
