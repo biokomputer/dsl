@@ -1,12 +1,12 @@
 ![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
 
-[BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji
-i wdrażania biocomputingu mogłaby obejmować elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
-BioComp posiada jasną i intuicyjną składnię, umożliwiającą tworzenie i uruchamianie eksperymentów oraz analizę wyników.
+[BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
+
 
 ### Składnia
 
 Główne składniki BioDSL obejmują:
+
 1. **Definicje Molekularne**
 2. **Tworzenie Biologicznych Układów Logicznych**
 3. **Symulacje Eksperymentów**
@@ -14,20 +14,20 @@ Główne składniki BioDSL obejmują:
 5. **Monitorowanie i Utrzymanie Systemów**
 
 
-## Jak to dziala?
+### Zaleznosci
 
 BioComp zostal zaimplementowany jako Kod Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
 Pliki YAML zawieraja parametry dla tych instancji.
 Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia symulację w oparciu o parametry zawarte w pliku YAML.
 
 
-
-### Zaleznosci
-
 1. **`pyparsing`**: Biblioteka do parsowania, potrzebna do przetwarzania DSL.
 2. **`matplotlib`**: Biblioteka do tworzenia wizualizacji, użyta do generowania wykresów wyników symulacji.
 3. **`numpy`**: Biblioteka do operacji na tablicach wielowymiarowych, używana do generowania danych do symulacji.
 4. **`graphviz`**: The addition of the `graphviz` module is necessary for graph visualization.
+
+
+### Instalacja
 
 Aby zainstalować te wymagania w swoim środowisku Python, wykonaj następujące kroki:
 
