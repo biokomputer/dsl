@@ -1,7 +1,9 @@
 ![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
 
-[BioComp](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
+[BioComp "Coded Life"](https://dsl.biokomputery.pl/) to propozycja języka domenowo-specyficznego (DSL) do edukacji i wdrażania biocomputingu obejmuje elementy języka opisu eksperymentów, symulacji, designu i utrzymania systemów biokomputerowych. 
+Motto "Coded Life" Łączy w sobie koncepcję kodowania (nawiązując do aspektu programistycznego) z życiem (odnosząc się do biologicznej strony projektu).
 
+Czy chciałbyś użyć tego motta, czy może wolałbyś rozważyć jeszcze inne opcje?
 
 ### Składnia języka
 
