@@ -145,15 +145,9 @@ Poniżej znajduje się przybliżona wizualizacja:
 W praktycznych zastosowaniach, dane wejściowe będą bardziej złożone i precyzyjne, bazujące na faktycznych pomiarach lub modelach biomolekularnych.
 Symulacje mogą prezentować poziomy ekspresji genów, aktywności enzymatycznej, stężeń cząsteczek sygnałowych i innych ważnych parametrów biologicznych w zależności od warunków eksperymentalnych.
 
-**Podsumowanie**:
-
-Przykładowa sinusoidalna funkcja pokazuje podstawowe podejście do wizualizacji tych danych, ale rzeczywiste dane mogą być o wiele bardziej skomplikowane, zależnie od specyfiki symulacji i modelu biokomputerowego.
-
-
-
-
 ## Przykłady
 
+Przykładowa sinusoidalna funkcja pokazuje podstawowe podejście do wizualizacji tych danych, ale rzeczywiste dane mogą być o wiele bardziej skomplikowane, zależnie od specyfiki symulacji i modelu biokomputerowego.
 Te przykłady obejmują różne konfiguracje dla różnych typów biologicznych układów logicznych. Przykłady obejmują różne typy bramek logicznych, takie jak "AND", "OR" i "NOT". Jeśli w twojej klasie `LogicGate` zostały zaimplementowane poprawne działanie dla tych bramek, to te przykłady powinny dawać odpowiednie wyniki na podstawie ustawionych warunków w plikach YAML.
 Jeśli nie zaimplementowano jeszcze działania dla tych bramek w klasie `LogicGate`, to należy to zrobić.
 
@@ -293,7 +287,9 @@ Wzrost grzybów można modelować za pomocą różniczkowych równań wzrostu bi
 ### Wzór Symulacji Wzrostu Grzybów
 
 Równanie logistyczne może być używane do modelowania wzrostu populacji organizmu, w tym grzybów:
+```latex
 \[ \frac{dN}{dt} = rN \left(1 - \frac{N}{K}\right) \]
+```
 
 Gdzie:
 - \( N \) jest liczbą organizmów (np. masa biomasy grzybów),
@@ -375,8 +371,11 @@ Założenia:
 2. **Model reakcyjno-dyfuzyjny**: Użyjemy prostego równania reakcyjno-dyfuzyjnego do modelowania rozprzestrzeniania się i reakcji chemotaksyn.
 
 ### Równanie Reakcyjno-Dyfuzyjne
+
+```latex
 \[ \frac{\partial u}{\partial t} = D \nabla^2 u + f(u, v) \]
-\[ \frac{\partial v}{\partial t} = D \nabla^2 v + g(u, v) \] 
+\[ \frac{\partial v}{\partial t} = D \nabla^2 v + g(u, v) \]
+``` 
 gdzie:
 - \( u \) i \( v \) są koncentracją substancji chemicznych,
 - \( D \) jest współczynnikiem dyfuzji,
