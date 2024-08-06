@@ -1,8 +1,10 @@
 import argparse
+import os
 import yaml
 import matplotlib.pyplot as plt
 import numpy as np
 from typing import List, Dict
+import graphviz
 
 
 # Definicje struktur danych
@@ -17,7 +19,7 @@ class Simulation:
         self.outputs = outputs
 
 
-# Funkcja do wczytywania z pliku YAML
+# Funkcja do wczytywania plików YAML
 def load_yaml_from_file(file_path: str) -> dict:
     with open(file_path, 'r') as file:
         return yaml.safe_load(file)
@@ -41,14 +43,37 @@ def run_simulation(simulation: Simulation):
         N = N + logistic_growth(t, N) * dt
         biomass_levels.append(N)
 
-    # Wizualizacja wyników
+    return time, biomass_levels
+
+
+# Funkcja generująca wykres wzrostu biomasy
+def generate_plot(time, biomass_levels, output_file):
     plt.figure()
-    plt.plot(time, biomass_levels, label=f"{simulation.outputs[0]}")
-    plt.title(f"Simulation: {simulation.name}")
+    plt.plot(time, biomass_levels, label='Biomass')
+    plt.title(f"Biomass Growth Simulation")
     plt.xlabel("Time (days)")
     plt.ylabel("Biomass")
     plt.legend()
-    plt.show()
+    plt.savefig(f"{output_file}.png")
+    plt.close()
+
+
+# Funkcja generująca definicję grafu
+def generate_graphviz_text(simulation: Simulation, output_file):
+    content = f"""
+    digraph G {{
+        node [shape=record];
+        "Simulation" [label="{{Name: {simulation.name}|Initial Population: {simulation.initial_population}|Growth Rate: {simulation.growth_rate}|Carrying Capacity: {simulation.carrying_capacity}|Conditions: time={simulation.conditions['time']}, temperature={simulation.conditions['temperature']}, humidity={simulation.conditions['humidity']}|Outputs: {', '.join(simulation.outputs)}}}"];
+    }}
+    """
+    with open(f"{output_file}.dot", 'w') as file:
+        file.write(content)
+
+
+# Funkcja generująca graficzną reprezentację grafu
+def generate_graphviz_image(output_file):
+    dot_file = f"{output_file}.dot"
+    graphviz.render('dot', 'png', dot_file)
 
 
 # Funkcja do tworzenia obiektów symulacji z pliku YAML
@@ -65,14 +90,32 @@ def parse_yaml_to_simulation(yaml_data: dict) -> Simulation:
 
 # Główna funkcja
 def main():
-    parser = argparse.ArgumentParser(description='Run fungal growth simulation from YAML file.')
-    parser.add_argument('file', type=str, nargs='?', default='fungi_simulation_1.yaml',
-                        help='The YAML file to process (default: fungi_simulation_1.yaml)')
+    parser = argparse.ArgumentParser(description='Run fungal growth simulations from YAML files.')
+    parser.add_argument('--files', type=str, nargs='*', help='The YAML files to process')
+    parser.add_argument('--folder', type=str, help='Folder containing YAML files')
 
     args = parser.parse_args()
-    yaml_data = load_yaml_from_file(args.file)
-    simulation = parse_yaml_to_simulation(yaml_data)
-    run_simulation(simulation)
+
+    files = args.files if args.files else []
+    if args.folder:
+        for file_name in os.listdir(args.folder):
+            if file_name.endswith('.yaml'):
+                files.append(os.path.join(args.folder, file_name))
+
+    if not files:
+        print("No YAML files specified.")
+        return
+
+    for file in files:
+        yaml_data = load_yaml_from_file(file)
+        simulation = parse_yaml_to_simulation(yaml_data)
+
+        time, biomass_levels = run_simulation(simulation)
+
+        base_name = os.path.splitext(file)[0]
+        generate_plot(time, biomass_levels, base_name)
+        generate_graphviz_text(simulation, base_name)
+        generate_graphviz_image(base_name)
 
 
 if __name__ == "__main__":

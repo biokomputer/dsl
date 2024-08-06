@@ -1,27 +1,40 @@
 import argparse
 import os
 import yaml
-import matplotlib.pyplot as plt
 import numpy as np
-from typing import List, Dict
+import matplotlib.pyplot as plt
 import graphviz
+from typing import List, Dict
 
 
 # Definicje struktur danych
 class Simulation:
-    def __init__(self, name: str, growth_rate: float,
-                 conditions: Dict, outputs: List[str]):
+    def __init__(self, name: str, grid_size: int, steps: int, diffusion_coefficient: float,
+                reaction_rate: float, k: float, initial_u_value: float, initial_v_value: float,
+                initial_radius: int, conditions: Dict[str, float], outputs: List[str]):
         self.name = name
-        self.growth_rate = growth_rate
+        self.grid_size = grid_size
+        self.steps = steps
+        self.diffusion_coefficient = diffusion_coefficient
+        self.reaction_rate = reaction_rate
+        self.k = k
+        self.initial_u_value = initial_u_value
+        self.initial_v_value = initial_v_value
+        self.initial_radius = initial_radius
         self.conditions = conditions
         self.outputs = outputs
 
-# Stałe modelu
-D = 0.1  # Współczynnik dyfuzji
-f = 0.04  # Tempo reakcji
-k = 0.06  # Krystalizacja
 
-def simulate_reaction_diffusion(n, steps, D, f, k, initial_u_value, initial_v_value, initial_radius):
+def simulate_reaction_diffusion(sim: Simulation):
+    n = sim.grid_size
+    steps = sim.steps
+    D = sim.diffusion_coefficient
+    f = sim.reaction_rate
+    k = sim.k
+    initial_u_value = sim.initial_u_value
+    initial_v_value = sim.initial_v_value
+    initial_radius = sim.initial_radius
+
     u = np.ones((n, n))
     v = np.zeros((n, n))
 
@@ -49,9 +62,16 @@ def simulate_reaction_diffusion(n, steps, D, f, k, initial_u_value, initial_v_va
     return u, v
 
 
+def generate_plot(u, v, output_file):
+    plt.figure()
+    plt.imshow(u, cmap='hot')
+    plt.colorbar()
+    plt.title("Physarum polycephalum Growth")
+    plt.savefig(f"{output_file}.png")
+    plt.close()
 
-# Generowanie grafu hierarchicznego
-def generate_graphviz_hierarchy(output_file):
+
+def generate_graphviz_hierarchy(sim: Simulation, output_file):
     dot = graphviz.Digraph(comment='Physarum Hierarchical Structure')
     dot.node('A', 'Physarum polycephalum')
     for i in range(1, 5):
@@ -63,24 +83,23 @@ def generate_graphviz_hierarchy(output_file):
     dot.render(output_file, format='png', cleanup=True)
 
 
-generate_graphviz_hierarchy('physarum_hierarchy')
-
-# Funkcja generująca wykres wzrostu biomasy
-def generate_plot(u, v, output_file):
-    plt.figure()
-    plt.imshow(u, cmap='hot')
-    plt.colorbar()
-    plt.title("Physarum polycephalum Growth")
-    plt.savefig(f"{output_file}.png")
-    plt.close()
-
-
-# Funkcja generująca definicję grafu
-def generate_graphviz_text(simulation_params, output_file):
+def generate_graphviz_text(sim: Simulation, output_file):
     content = f"""
     digraph G {{
         node [shape=record];
-        "Simulation" [label="{{Name: {simulation_params['name']}|Initial Population: {simulation_params['initial_u_value']}|Growth Rate: {simulation_params['reaction_rate']}|Conditions: time={simulation_params['conditions']['time']}, temperature={simulation_params['conditions']['temperature']}, humidity={simulation_params['conditions']['humidity']}}}" ];
+        "Simulation" [label="{{
+            Name: {sim.name} |
+            Grid Size: {sim.grid_size} |
+            Steps: {sim.steps} |
+            Diffusion Coefficient: {sim.diffusion_coefficient} |
+            Reaction Rate: {sim.reaction_rate} |
+            k: {sim.k} |
+            Initial U Value: {sim.initial_u_value} |
+            Initial V Value: {sim.initial_v_value} |
+            Initial Radius: {sim.initial_radius} |
+            Conditions: time={sim.conditions['time']}, temperature={sim.conditions['temperature']}, humidity={sim.conditions['humidity']} |
+            Outputs: {', '.join(sim.outputs)}
+        }}"];
     }}
     """
     with open(f"{output_file}.dot", 'w') as file:
@@ -92,9 +111,21 @@ def generate_graphviz_image(output_file):
     dot_file = f"{output_file}.dot"
     graphviz.render('dot', 'png', dot_file)
 
-# Funkcja do tworzenia obiektów symulacji Physarum z pliku YAML
-def parse_yaml_to_simulation(yaml_data: dict):
-    return yaml_data
+
+def parse_yaml_to_simulation(yaml_data: dict) -> Simulation:
+    return Simulation(
+        name=yaml_data["name"],
+        grid_size=yaml_data["grid_size"],
+        steps=yaml_data["steps"],
+        diffusion_coefficient=yaml_data["diffusion_coefficient"],
+        reaction_rate=yaml_data["reaction_rate"],
+        k=yaml_data["k"],
+        initial_u_value=yaml_data["initial_u_value"],
+        initial_v_value=yaml_data["initial_v_value"],
+        initial_radius=yaml_data["initial_radius"],
+        conditions=yaml_data["conditions"],
+        outputs=yaml_data["outputs"]
+    )
 
 # Funkcja do wczytywania plików YAML
 def load_yaml_from_file(file_path: str) -> dict:
@@ -121,23 +152,15 @@ def main():
 
     for file in files:
         yaml_data = load_yaml_from_file(file)
-        simulation_params = parse_yaml_to_simulation(yaml_data)
+        sim = parse_yaml_to_simulation(yaml_data)
 
-        n = simulation_params['grid_size']
-        steps = simulation_params['steps']
-        D = simulation_params['diffusion_coefficient']
-        f = simulation_params['reaction_rate']
-        k = simulation_params['k']
-        initial_u_value = simulation_params['initial_u_value']
-        initial_v_value = simulation_params['initial_v_value']
-        initial_radius = simulation_params['initial_radius']
-
-        u, v = simulate_reaction_diffusion(n, steps, D, f, k, initial_u_value, initial_v_value, initial_radius)
+        u, v = simulate_reaction_diffusion(sim)
 
         base_name = os.path.splitext(file)[0]
         generate_plot(u, v, base_name)
-        generate_graphviz_text(simulation_params, base_name)
+        generate_graphviz_text(sim, base_name)
         generate_graphviz_image(base_name)
+        generate_graphviz_hierarchy(sim, base_name + '_hierarchy')
 
 
 if __name__ == "__main__":

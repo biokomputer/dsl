@@ -1,0 +1,18 @@
+
+    digraph G {
+        node [shape=record];
+        "Simulation" [label="{
+            Name: PhysarumSimulation1 |
+            Grid Size: 101 |
+            Steps: 10000 |
+            Diffusion Coefficient: 0.1 |
+            Reaction Rate: 0.04 |
+            k: 0.06 |
+            Initial U Value: 0.5 |
+            Initial V Value: 0.25 |
+            Initial Radius: 20 |
+            Conditions: time=30, temperature=25, humidity=80 |
+            Outputs: u, v
+        }"];
+    }
+    

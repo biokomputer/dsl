@@ -276,6 +276,110 @@ Expected Outputs: ['Protein OutputProt']
 ![4](4/sim.png)
 
 
+## Symulacja Grzybow
+
+### FungiExperiment1
+
+```bash
+python fungi.py --folder ./11
+```
+
+```css
+digraph G {
+    node [shape=record];
+    "Simulation" [label="{Name: FungiExperiment1|Initial Population: 10|Growth Rate: 0.2|Carrying Capacity: 1000|Conditions: time=30, temperature=25, humidity=80|Outputs: Biomass}"];
+}
+```
+![fungi.dot.png](11/fungi.dot.png)
+![fungi.png](11/fungi.png)
+[fungi.yaml](11/fungi.yaml)
+
+### FungiExperiment2
+
+```bash
+python fungi.py --folder ./11
+```
+
+```css
+digraph G {
+    node [shape=record];
+    "Simulation" [label="{Name: FungiExperiment2|Initial Population: 5|Growth Rate: 0.1|Carrying Capacity: 500|Conditions: time=45, temperature=20, humidity=90|Outputs: Biomass}"];
+}
+```
+[fungi.dot](12/fungi.dot)
+![fungi.dot.png](12/fungi.dot.png)
+![fungi.png](12/fungi.png)
+[fungi.yaml](12/fungi.yaml)
+
+
+## Physarum
+
+### PhysarumExperiment1
++ [physarum.yaml](21/physarum.yaml)
+
+```bash
+python physarum.py --folder ./21
+```
++ [physarum.dot](21/physarum.dot)
+```css
+digraph G {
+    node [shape=record];
+    "Simulation" [label="{
+        Name: PhysarumSimulation1 |
+        Grid Size: 101 |
+        Steps: 10000 |
+        Diffusion Coefficient: 0.1 |
+        Reaction Rate: 0.04 |
+        k: 0.06 |
+        Initial U Value: 0.5 |
+        Initial V Value: 0.25 |
+        Initial Radius: 20 |
+        Conditions: time=30, temperature=25, humidity=80 |
+        Outputs: u, v
+    }"];
+}
+```
+![physarum_hierarchy.png](21/physarum_hierarchy.png)
+
+![physarum.dot.png](21/physarum.dot.png)
+
+![physarum.png](21/physarum.png)
+
+### PhysarumExperiment2
++ [physarum.yaml](22/physarum.yaml)
+
+```bash
+python physarum.py --folder ./21
+```
+[physarum.dot](22/physarum.dot)
+```css
+digraph G {
+    node [shape=record];
+    "Simulation" [label="{
+        Name: PhysarumSimulation2 |
+        Grid Size: 101 |
+        Steps: 5000 |
+        Diffusion Coefficient: 0.15 |
+        Reaction Rate: 0.035 |
+        k: 0.065 |
+        Initial U Value: 0.45 |
+        Initial V Value: 0.3 |
+        Initial Radius: 25 |
+        Conditions: time=45, temperature=20, humidity=90 |
+        Outputs: u, v
+    }"];
+}
+```
+![physarum_hierarchy.png](22/physarum_hierarchy.png)
+
+![physarum.dot.png](22/physarum.dot.png)
+
+![physarum.png](22/physarum.png)
+
+
+
+
+
 
 
 ## Star History

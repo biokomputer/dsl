@@ -1,0 +1,6 @@
+
+    digraph G {
+        node [shape=record];
+        "Simulation" [label="{Name: FungiExperiment2|Initial Population: 5|Growth Rate: 0.1|Carrying Capacity: 500|Conditions: time=45, temperature=20, humidity=90|Outputs: Biomass}"];
+    }
+    

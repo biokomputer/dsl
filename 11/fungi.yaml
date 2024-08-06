@@ -1,0 +1,11 @@
+type: fungi
+name: "FungiExperiment1"
+initial_population: 10
+growth_rate: 0.2
+carrying_capacity: 1000
+conditions:
+  time: 30      # days
+  temperature: 25  # Celsius
+  humidity: 80     # Percentage
+outputs:
+  - "Biomass"

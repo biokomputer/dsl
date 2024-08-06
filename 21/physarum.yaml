@@ -1,0 +1,17 @@
+type: physarum
+name: "PhysarumSimulation1"
+grid_size: 101
+steps: 10000
+diffusion_coefficient: 0.1
+reaction_rate: 0.04
+k: 0.06
+initial_u_value: 0.50
+initial_v_value: 0.25
+initial_radius: 20
+conditions:
+  time: 30    # days
+  temperature: 25  # Celsius
+  humidity: 80     # Percentage
+outputs:
+  - "u"
+  - "v"
