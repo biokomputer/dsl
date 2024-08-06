@@ -10,11 +10,11 @@ Motto "Coded Life" Łączy w sobie koncepcję kodowania (nawiązując do aspektu
 **BioComp** jest zaimplementowany jako skrypt Pythona z klasami i funkcjami przetwarzania pliku 'yaml', generowania symulacji i grafu. 
 Plik `biocomp.py` modelu jest konwertowany do obiektow klas potrzebnyh do uruchamienia symulacji.
 Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
-1. **Definicje Molekularne**
-2. **Tworzenie Biologicznych Układów Logicznych**
-3. **Symulacje Eksperymentów**
-4. **Drukowanie i Inżynieria BioSystemów**
-5. **Monitorowanie i Utrzymanie Systemów**
+1. Definicje Molekularne
+2. Tworzenie Biologicznych Układów Logicznych
+3. Symulacje Eksperymentów
+4. Drukowanie i Inżynieria BioSystemów
+5. Monitorowanie i Utrzymanie Systemów
 
 ### Symulacja bramki AND
 
