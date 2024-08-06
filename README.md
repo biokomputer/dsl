@@ -203,9 +203,9 @@ Expected Outputs: ['Protein OutputProt']
 
 ## Tom Sapletta
 
-Na co dzień DevOps, ewangelista hipermodularyzacji,a ostatnio entuzjasta biocomputing.
+Na co dzień DevOps, ewangelista hipermodularyzacji, ostatnio entuzjasta biocomputing.
 Łączy doświadczenie w programowaniu i research-u poprzez wdrażanie nowatorskich rozwiązań. 
-Szerokie spektrum zainteresowań, umiejętności analityczne i doświadczenie w branży owocują pozatechnicznymi treściami jak powyższy raport.
+Szerokie spektrum zainteresowań, umiejętności analityczne i doświadczenie w branży owocują eksperymentalnymi projetkami opensource jak ten omwiony.
 
 + [Tom Sapletta, Linkedin](https://www.linkedin.com/in/tom-sapletta-com)
 + [Tom Sapletta, Github](https://github.com/tom-sapletta-com)
