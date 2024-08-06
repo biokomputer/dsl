@@ -21,6 +21,14 @@ Plik **YAML** zawiera potrzebne informacje do wykonania symulacji:
 
 - **Poziom Wyjściowy:** 
 
+
+```python
+def run_simulation(simulation):
+    time = np.linspace(0, float(simulation.conditions["time"]), 100)  # Generowanie 100 punktów czasowych
+    output_levels = np.sin(time) / 2 + 0.5  # Przykładowa funkcja poziomu wyjściowego    
+```
+
+
 ```latex
 \[ \text{output\_level} = \frac{\sin(t)}{2} + 0.5 \]
 ```
