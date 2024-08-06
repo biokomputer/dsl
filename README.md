@@ -50,6 +50,7 @@ To run this setup, follow these steps:
 ```sh
 python biocomp.py 1.biocomp.yaml
 ```
+![1](img/1.png)
 
 The output should be something like:
 
@@ -59,7 +60,6 @@ Conditions: {'time': 100, 'temperature': 37}
 Expected Outputs: ['Protein OutputProt']
 ```
 
-![sim.png](sim.png)
 
 This setup parses the YAML file, creates the necessary objects, and runs the simulation based on the parameters provided in the YAML file.
 
@@ -76,21 +76,90 @@ To test your script with these examples, save each YAML configuration as separat
 ```sh
 python biocomp.py 2.biocomp.yaml
 ```
-
+![2](img/2.png)
+```yaml
+Running simulation for BioCompSystem2
+Conditions: {'time': 150, 'temperature': 25}
+Expected Outputs: ['Protein OutputProt']
+```
 
 
 ```sh
 python biocomp.py 3.biocomp.yaml
 ```
-
+![3](img/3.png)
+```yaml
+Running simulation for BioCompSystem3
+Conditions: {'time': 200, 'temperature': 30}
+Expected Outputs: ['Protein OutputProt1', 'Protein OutputProt2']
+```
 
 ```sh
 python biocomp.py 4.biocomp.yaml
+```
+![4](img/4.png)
+```yaml
+Running simulation for BioCompSystem4
+Conditions: {'time': 120, 'temperature': 37}
+Expected Outputs: ['Protein OutputProt']
 ```
 
 
 
 
+I see the issue. For the NOT gate, the `input2` field is not required and should be handled differently in the code. Let's update both the YAML example and the Python script to handle the NOT gate correctly.
+
+### Updated YAML Example
+For the NOT gate simulation, omit the `input2` field entirely.
+
+```yaml
+# simulation4.yaml
+
+molecules:
+  - type: Protein
+    name: Input1Prot
+  - type: Protein
+    name: OutputProt
+
+logic_gates:
+  - gate_type: NOT
+    input1: Input1Prot
+    output: OutputProt
+
+biological_system:
+  name: BioCompSystem4
+
+simulation:
+  conditions:
+    time: 120
+    temperature: 37
+  outputs:
+    - Protein OutputProt
+```
+
+### Updated Python Code
+Modify the `LogicGate` class and the logic where logic gates are parsed to handle NOT gates correctly.
+
+```python
+```
+
+### Running the Updated Example
+
+To test the updated example, execute the script with the `simulation4.yaml` file as an argument:
+
+```sh
+python bio_simulation.py simulation4.yaml
+```
+
+This should now handle the NOT gate correctly and output:
+
+```
+Running simulation for BioCompSystem4
+Conditions: {'time': 120, 'temperature': 37}
+Expected Outputs: ['Protein OutputProt']
+```
+
+This revised script now properly handles cases where a logic gate does not require a second input, such as in the case of a NOT gate.
 
 
 

@@ -14,13 +14,15 @@ class Molecule:
 
 
 class LogicGate:
-    def __init__(self, gate_type, input1, input2, output):
+    def __init__(self, gate_type, input1, output, input2=None):
         self.gate_type = gate_type
         self.input1 = input1
         self.input2 = input2
         self.output = output
 
     def __repr__(self):
+        if self.gate_type == 'NOT':
+            return f"{self.gate_type} Gate(Input: {self.input1.name}, Output: {self.output.name})"
         return f"{self.gate_type} Gate(Input1: {self.input1.name}, Input2: {self.input2.name}, Output: {self.output.name})"
 
 
@@ -69,18 +71,24 @@ def main(yaml_file):
     molecules = {m['name']: Molecule(type=m['type'], name=m['name']) for m in data['molecules']}
 
     # Parse logic gates
-    logic_gates = [LogicGate(gate_type=lg['gate_type'],
-                             input1=molecules[lg['input1']],
-                             input2=molecules[lg['input2']],
-                             output=molecules[lg['output']]) for lg in data['logic_gates']]
+    logic_gates = []
+    for lg in data['logic_gates']:
+        if lg['gate_type'] == 'NOT':
+            logic_gate = LogicGate(gate_type=lg['gate_type'],
+                                   input1=molecules[lg['input1']],
+                                   output=molecules[lg['output']])
+        else:
+            logic_gate = LogicGate(gate_type=lg['gate_type'],
+                                   input1=molecules[lg['input1']],
+                                   input2=molecules[lg['input2']],
+                                   output=molecules[lg['output']])
+        logic_gates.append(logic_gate)
 
     # Create Biological System
-    bio_system = BiologicalSystem(name=data['biological_system']['name'], logic_gates=logic_gates,
-                                  molecules=list(molecules.values()))
+    bio_system = BiologicalSystem(name=data['biological_system']['name'], logic_gates=logic_gates, molecules=list(molecules.values()))
 
     # Create and run simulation
-    simulation = Simulation(system=bio_system, conditions=data['simulation']['conditions'],
-                            outputs=data['simulation']['outputs'])
+    simulation = Simulation(system=bio_system, conditions=data['simulation']['conditions'], outputs=data['simulation']['outputs'])
     simulation.run()
     run_simulation(simulation)
 
