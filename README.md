@@ -146,9 +146,6 @@ python biocomp.py biocomp.yaml
 ```
 
 
-![obraz](https://github.com/user-attachments/assets/4f3edf66-756a-4844-a3fe-99c39f4d43dd)
-
-
 ## Przykłady
 
 Te przykłady obejmują różne konfiguracje dla różnych typów biologicznych układów logicznych. Przykłady obejmują różne typy bramek logicznych, takie jak "AND", "OR" i "NOT". Jeśli w twojej klasie `LogicGate` zostały zaimplementowane poprawne działanie dla tych bramek, to te przykłady powinny dawać odpowiednie wyniki na podstawie ustawionych warunków w plikach YAML.
@@ -160,7 +157,7 @@ Aby przetestować twoją aplikację z tą funkcjonalnością, należy zapisać k
 ### BioCompSystem1
 + [biocomp.yaml](1/biocomp.yaml)
 
-![bio_system_graph.png](1%2Fbio_system_graph.png)
+![bio_system_graph.png](1/bio_system_graph.png)
 
 ```py
 digraph {
