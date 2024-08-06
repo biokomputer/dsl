@@ -4,14 +4,14 @@
         "Simulation" [label="{
             Name: PhysarumSimulation2 |
             Grid Size: 101 |
-            Steps: 500 |
+            Steps: 200 |
             Diffusion Coefficient: 0.2 |
             Reaction Rate: 0.02 |
             k: 0.07 |
             Initial U Value: 0.2 |
             Initial V Value: 0.25 |
-            Initial Radius: 10 |
-            Conditions: time=60, temperature=30, humidity=90 |
+            Initial Radius: 1 |
+            Conditions: time=2, temperature=3, humidity=50 |
             Outputs: u, v
         }"];
     }

@@ -9,8 +9,8 @@ initial_u_value: 0.20
 initial_v_value: 0.25
 initial_radius: 1
 conditions:
-  time: 2    # days
-  temperature: 2  # Celsius
+  time: 3    # days
+  temperature: 3  # Celsius
   humidity: 50     # Percentage
 outputs:
   - "u"

@@ -325,16 +325,16 @@ python physarum.py --folder ./21
 digraph G {
     node [shape=record];
     "Simulation" [label="{
-        Name: PhysarumSimulation1 |
+        Name: PhysarumSimulation2 |
         Grid Size: 101 |
-        Steps: 10000 |
-        Diffusion Coefficient: 0.1 |
-        Reaction Rate: 0.04 |
-        k: 0.06 |
-        Initial U Value: 0.5 |
+        Steps: 200 |
+        Diffusion Coefficient: 0.2 |
+        Reaction Rate: 0.02 |
+        k: 0.07 |
+        Initial U Value: 0.2 |
         Initial V Value: 0.25 |
-        Initial Radius: 20 |
-        Conditions: time=30, temperature=25, humidity=80 |
+        Initial Radius: 1 |
+        Conditions: time=2, temperature=2, humidity=50 |
         Outputs: u, v
     }"];
 }
@@ -350,7 +350,7 @@ digraph G {
 + [physarum.yaml](22/physarum.yaml)
 
 ```bash
-python physarum.py --folder ./21
+python physarum.py --folder ./22
 ```
 + [physarum.dot](22/physarum.dot)
 ```py
@@ -359,14 +359,14 @@ digraph G {
     "Simulation" [label="{
         Name: PhysarumSimulation2 |
         Grid Size: 101 |
-        Steps: 5000 |
-        Diffusion Coefficient: 0.15 |
-        Reaction Rate: 0.035 |
-        k: 0.065 |
-        Initial U Value: 0.45 |
-        Initial V Value: 0.3 |
-        Initial Radius: 25 |
-        Conditions: time=45, temperature=20, humidity=90 |
+        Steps: 200 |
+        Diffusion Coefficient: 0.2 |
+        Reaction Rate: 0.02 |
+        k: 0.07 |
+        Initial U Value: 0.2 |
+        Initial V Value: 0.25 |
+        Initial Radius: 1 |
+        Conditions: time=2, temperature=3, humidity=50 |
         Outputs: u, v
     }"];
 }
@@ -379,6 +379,38 @@ digraph G {
 
 
 
+
+### PhysarumExperiment3
+
++ [physarum.yaml](23/physarum.yaml)
+
+```bash
+python physarum.py --folder ./23
+```
++ [physarum.dot](23/physarum.dot)
+```py
+digraph G {
+    node [shape=record];
+    "Simulation" [label="{
+        Name: PhysarumSimulation2 |
+        Grid Size: 101 |
+        Steps: 200 |
+        Diffusion Coefficient: 0.2 |
+        Reaction Rate: 0.02 |
+        k: 0.07 |
+        Initial U Value: 0.2 |
+        Initial V Value: 0.25 |
+        Initial Radius: 1 |
+        Conditions: time=3, temperature=3, humidity=50 |
+        Outputs: u, v
+    }"];
+}
+```
+![physarum_hierarchy.png](23/physarum_hierarchy.png)
+
+![physarum.dot.png](23/physarum.dot.png)
+
+![physarum.png](23/physarum.png)
 
 
 

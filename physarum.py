@@ -10,8 +10,8 @@ from typing import List, Dict
 # Definicje struktur danych
 class Simulation:
     def __init__(self, name: str, grid_size: int, steps: int, diffusion_coefficient: float,
-                reaction_rate: float, k: float, initial_u_value: float, initial_v_value: float,
-                initial_radius: int, conditions: Dict[str, float], outputs: List[str]):
+                 reaction_rate: float, k: float, initial_u_value: float, initial_v_value: float,
+                 initial_radius: int, conditions: Dict[str, float], outputs: List[str]):
         self.name = name
         self.grid_size = grid_size
         self.steps = steps
@@ -27,9 +27,11 @@ class Simulation:
 
 def simulate_reaction_diffusion(sim: Simulation):
     n = sim.grid_size
-    steps = sim.steps
-    D = sim.diffusion_coefficient
-    f = sim.reaction_rate
+    steps = int(sim.conditions['time'] * 1000)  # assuming "time" in conditions is in days, convert to appropriate steps
+
+    # Adjust diffusion coefficient and reaction rate based on temperature and humidity
+    D = sim.diffusion_coefficient * (sim.conditions['temperature'] / 25.0)  # Normalize to room temperature
+    f = sim.reaction_rate * (sim.conditions['humidity'] / 100.0)  # Normalize to 100% humidity
     k = sim.k
     initial_u_value = sim.initial_u_value
     initial_v_value = sim.initial_v_value

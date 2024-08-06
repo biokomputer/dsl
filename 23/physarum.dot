@@ -11,7 +11,7 @@
             Initial U Value: 0.2 |
             Initial V Value: 0.25 |
             Initial Radius: 1 |
-            Conditions: time=2, temperature=2, humidity=50 |
+            Conditions: time=3, temperature=3, humidity=50 |
             Outputs: u, v
         }"];
     }
