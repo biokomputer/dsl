@@ -162,7 +162,9 @@ Expected Outputs: ['Protein OutputProt']
 This revised script now properly handles cases where a logic gate does not require a second input, such as in the case of a NOT gate.
 
 
+## Menu
 
-
++ [edit](https://github.com/biokomputer/dsl/edit/main/README.md)
++ [project](https://github.com/biokomputer/dsl)
 
 
