@@ -16,7 +16,7 @@ Główne składniki BioDSL obejmują:
 
 ### Zaleznosci
 
-BioComp to skrypt Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
+BioComp zostal zaimplementowany jako Kod Pythona z klasami i logiką do tworzenia instancji i ich przetwarzania.
 Pliki YAML zawieraja parametry dla tych instancji.
 Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia symulację w oparciu o parametry zawarte w pliku YAML.
 
@@ -32,7 +32,6 @@ Skrypt `biocomp.py` analizuje plik YAML, tworzy niezbędne obiekty i uruchamia s
 Aby zainstalować te wymagania w swoim środowisku Python, wykonaj następujące kroki:
 
 #### Stwórz i aktywuj wirtualne środowisko:
-
 ```bash
 python -m venv env
 source env/bin/activate  # Na Windows użyj: env\Scripts\activate
@@ -44,26 +43,26 @@ pip install -r requirements.txt
 pip install --upgrade pip
 ```
 
+### Execution Script
 
-### Uruchomienie
+To run this setup, follow these steps:
 
-Aby uruchomić tę konfigurację, wykonaj następujące kroki:
-
-1. Zapisz kod Python w pliku o nazwie `biocomp.py`.
-2. Zapisz zawartość pliku YAML w pliku o nazwie `biocomp.yaml`.
-3. Uruchom skrypt Python z pliku `biocomp.py`, podając plik YAML jako argument:
-
-```bash
-python biocomp.py biocomp.yaml
-```
+1. Save the Python code in a file named `biocomp.py`.
+2. Save the YAML content in a file named `biocomp.yaml`.
+3. Execute the Python script from the command line, providing the YAML file as an argument:
 
 
-## Przyklady
+This setup parses the YAML file, creates the necessary objects, and runs the simulation based on the parameters provided in the YAML file.
 
-Te przykłady obejmują różne konfiguracje dla różnych typów biologicznych układów logicznych. Przykłady obejmują różne typy bramek logicznych, takie jak "AND", "OR" i "NOT". Jeśli w twojej klasie `LogicGate` zostały zaimplementowane poprawne działanie dla tych bramek, to te przykłady powinny dawać odpowiednie wyniki na podstawie ustawionych warunków w plikach YAML.
-Jeśli nie zaimplementowano jeszcze działania dla tych bramek w klasie `LogicGate`, to należy to zrobić.
 
-Aby przetestować twoją aplikację z tą funkcjonalnością, należy zapisać każdy plik YAML jako osobny plik.
+## Samples
+
+These examples include various configurations of molecules, logic gates, and simulation conditions.
+Assuming you have implemented `AND`, `OR`, and `NOT` gate logic in your actual `LogicGate` class, these should yield appropriate outputs based on the conditions set in each YAML file.
+Examples can handle various gate types (`AND`, `OR`, `NOT`). 
+If not, you'll need to add the logic for these gate types in your `LogicGate` class implementation.
+
+To test your script with these examples, save each YAML configuration as separate files 
 
 
 ### BioCompSystem1
