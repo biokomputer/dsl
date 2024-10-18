@@ -6,9 +6,7 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
-        'pyparsing==2.4.7',
-        'matplotlib==3.4.3',
-        'numpy==1.21.2'
+
     ],
     entry_points={
         'console_scripts': [
