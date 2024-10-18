@@ -36,6 +36,13 @@ Aby zainstalować te wymagania w swoim środowisku Python, wykonaj następujące
 python -m venv env
 source env/bin/activate  # Na Windows użyj: env\Scripts\activate
 ```
+lub
+If the user has Miniconda or Anaconda, I will provide instructions to create a new environment and install Graphviz within that environment:
+```bash
+conda create -n biokomputer python=3.12 graphviz
+conda activate biokomputer
+python main.py
+```
  
 #### Zainstaluj zależności z pliku `requirements.txt`:
 ```bash
