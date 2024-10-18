@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'biocomp=biocomp:main',
+            'biocomp=biocomp.biocomp:main',
         ],
     },
     author="Tom Sapletta",
