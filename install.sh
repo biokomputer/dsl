@@ -26,6 +26,8 @@ source venv/bin/activate || error "Failed to activate virtual environment"
 echo "Upgrading pip..."
 pip install --upgrade pip || error "Failed to upgrade pip"
 
+pip install -U pip setuptools wheel
+
 # Install Python dependencies
 echo "Installing Python dependencies..."
 pip install -r requirements.txt || error "Failed to install Python dependencies"
