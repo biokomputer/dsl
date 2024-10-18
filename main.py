@@ -1,5 +1,5 @@
 import yaml
-from src.biocomp import BiologicalSystem, Simulation, run_simulation
+from src.biocomp.biocomp import BiologicalSystem, Simulation, run_simulation
 from biograph import visualize_biological_system
 from fungi import run_simulation as run_fungi_simulation
 from physarum import simulate_reaction_diffusion, generate_plot, generate_graphviz_hierarchy
